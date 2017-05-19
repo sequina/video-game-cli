@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require './lib/video_games'
+
+VideoGames::CLI.new.call

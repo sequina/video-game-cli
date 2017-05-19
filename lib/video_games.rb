@@ -1,5 +1,2 @@
-require "video_games/version"
-
-module VideoGames
-  # Your code goes here...
-end
+require_relative "./video_games/version"
+require_relative "./video_games/cli"
