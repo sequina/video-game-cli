@@ -11,13 +11,10 @@ class VideoGames::CLI
 
   def list_games
     puts "Welcome to Video Games:"
-    puts <<-DOC
-
-    Hatsune Miku: Project DIVA Future Tone (PS4) - January 10
-    Rise and Shine (Xbox One, PC) – January 13
-    Road Redemption (PS4, Xbox One) - January 15
-    2064: Read Only Memories (PS4) - January 17
-    DOC
+    @games = VideoGames::Games.list_games
+    @games.each.with_index(1) do |game, i|
+      puts "#{i}. #{game.name} - #{game.console} - #{game.year}"
+    end
   end
 
   def list_consoles
@@ -25,7 +22,7 @@ class VideoGames::CLI
 
     XBOX
     PS4
-    GAMEBOY
+    PC
     DOC
   end
 
@@ -33,6 +30,19 @@ class VideoGames::CLI
     input = nil
     puts "Enter the name from above of the console you are on: "
     puts "Type exit to exit the program"
+
+    # if input != "exit"
+    #   input = gets.strip.downcase
+    # elsif input == "xbox"
+    #   puts list_games.xbox
+    # elsif input == "PS4"
+    #   puts list_games.PS4
+    # elsif input == "PC"
+    #   puts list_games.PC
+    # end
+
+
+
     while input != "exit"
       input = gets.strip.downcase
       case input

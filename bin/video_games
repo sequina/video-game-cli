@@ -1,4 +1,9 @@
 #!/usr/bin/env ruby
-require './lib/video_games'
+require "bundler/setup"
+require "video_games"
+# require 'nokogiri'
+# require 'open-uri'
+# require 'pry'
+
 
 VideoGames::CLI.new.call

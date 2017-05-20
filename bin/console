@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-
+# require "pry"
 require "bundler/setup"
 require "video_games"
 
@@ -11,4 +11,4 @@ require "video_games"
 # Pry.start
 
 require "irb"
-IRB.start(__FILE__)
+IRB.start
