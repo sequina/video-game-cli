@@ -2,29 +2,28 @@
 
 class VideoGames::CLI
 
+  def list_games
+    puts "Welcome to Video Games:"
+    puts @games = VideoGames::Games.list_games
+    # @games.each.with_index(1) do |game, i|
+    #   puts "#{i}. #{game.name} - #{game.console} - #{game.year}"
+    # end
+  end
+
   def call
     list_games
-    list_consoles
+    # list_consoles
     menu
     goodbye
   end
-
-  def list_games
-    puts "Welcome to Video Games:"
-    @games = VideoGames::Games.list_games
-    @games.each.with_index(1) do |game, i|
-      puts "#{i}. #{game.name} - #{game.console} - #{game.year}"
-    end
-  end
-
-  def list_consoles
-    puts <<-DOC
-
-    XBOX
-    PS4
-    PC
-    DOC
-  end
+  # def list_consoles
+  #   puts <<-DOC
+  #
+  #   XBOX
+  #   PS4
+  #   PC
+  #   DOC
+  # end
 
   def menu
     input = nil
