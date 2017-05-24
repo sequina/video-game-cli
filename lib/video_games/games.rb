@@ -24,7 +24,7 @@ class VideoGames::Games
     months = doc.search("div#divRenderBody p strong span")
 
     #this pulls out the list of games inside the span element
-    the_containing_p = months.first.parent.parent.children
+    the_containing_p = months.first.parent.parent
 
     #Iterate over each month and pull out that month
     months.each do |month|
@@ -32,6 +32,5 @@ class VideoGames::Games
       names = container_p.parent.parent.to_html.split("<br>")
     end
     months
-  end
-    #  binding.pry
+  end    #  binding.pry
 end
